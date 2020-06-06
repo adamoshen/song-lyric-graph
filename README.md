@@ -20,7 +20,7 @@ library(ggraph)
 library(stringr)
 ```
 
-Other required packages that were used but not loaded: `purrr`, `DT`.
+Other required packages that are used but not loaded: `purrr`, `DT`.
 
 ## Running the app
 
