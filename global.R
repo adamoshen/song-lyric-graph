@@ -43,10 +43,8 @@ create_graph <- reactive({
   if (ecount(lyric_data) == 0){
     ggplot(NULL)+
       geom_text(aes(x=0, y=1, label="Graph is empty - no repeated lyric pairs!",
-                    hjust="left", vjust="top"), 
-                colour="red", size=5)+
-      geom_text(aes(x=1, y=0, label="null"),
-                alpha=0)+
+                    hjust="left", vjust="top"), colour="red", size=5)+
+      geom_text(aes(x=1, y=0, label="null"), alpha=0)+
       theme_void()
   } else {
     a <- grid::arrow(type="closed", length=unit(3, "mm"))
@@ -56,14 +54,13 @@ create_graph <- reactive({
     ggraph(lyric_data, layout="fr")+
       geom_edge_fan(aes(colour=factor(n)), arrow=a,
                     start_cap=circle(5, "mm"), end_cap=circle(3, "mm"))+
-      geom_edge_loop(aes(colour=factor(n), span=-30), arrow=a,
-                     position=position_nudge(x=0.1),
+      geom_edge_loop(aes(colour=factor(n), span=-30), arrow=a, position=position_nudge(x=0.1),
                      start_cap=circle(5, "mm"), end_cap=circle(2, "mm"))+
-      geom_node_text(aes(label=name), position=position_dodge2(width=0.2, preserve="total"),
-                     hjust="inward", repel=TRUE) +
+      geom_node_text(aes(label=str_wrap(name, width=40)), position=position_dodge2(width=0.2, preserve="total"),
+                     hjust="inward", repel=TRUE)+
       theme_void()+
       scale_edge_colour_discrete(name="Co-occurrences", breaks=unique(edge_attr(lyric_data)$n))+
-      theme(legend.position="bottom", plot.title=element_text(vjust=2, face="bold"))+
+      theme(legend.position="bottom", plot.title=element_text(face="bold"))+
       labs(title=paste(user$songname, "by", user$artistname))
   }
 })
