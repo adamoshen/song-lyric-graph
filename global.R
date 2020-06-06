@@ -56,8 +56,7 @@ create_graph <- reactive({
                     start_cap=circle(5, "mm"), end_cap=circle(3, "mm"))+
       geom_edge_loop(aes(colour=factor(n), span=-30), arrow=a, position=position_nudge(x=0.1),
                      start_cap=circle(5, "mm"), end_cap=circle(2, "mm"))+
-      geom_node_text(aes(label=str_wrap(name, width=40)), #position=position_dodge2(width=0.2, preserve="total"),
-                     hjust="inward", repel=TRUE)+
+      geom_node_text(aes(label=str_wrap(name, width=40)), hjust="inward", repel=TRUE)+
       theme_void()+
       scale_edge_colour_discrete(name="Co-occurrences", breaks=unique(edge_attr(lyric_data)$n))+
       theme(legend.position="bottom", plot.title=element_text(face="bold"))+
