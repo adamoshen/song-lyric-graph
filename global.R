@@ -10,6 +10,7 @@ library(igraph)
 library(ggraph)
 library(stringr)
 
+
 ### Initialize reactive values
 user <- reactiveValues(artistname="Vance Joy", songname="Riptide")
 checkpoint1 <- reactiveValues(out=NA)
@@ -49,7 +50,7 @@ create_graph <- reactive({
   } else {
     a <- grid::arrow(type="closed", length=unit(3, "mm"))
     
-    set.seed(101)
+    set.seed(20)
     
     ggraph(lyric_data, layout="fr")+
       geom_edge_fan(aes(colour=factor(n)), arrow=a,
