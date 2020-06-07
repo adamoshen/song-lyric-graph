@@ -11,7 +11,11 @@ shinyServer(function(input, output) {
   })
   
   output$cover_art <- renderImage({
-    if (!is.character(checkpoint1$out)){
+    if (is.character(checkpoint1$out)){
+      return(list(src="./images/fail.png",
+                  contentType="image/png",
+                  alt="Song not found"))
+    } else {
       img <- gen_song_url(artist=user$artistname, song=user$songname) %>%
         read_html() %>%
         html_nodes(css="img") %>%
@@ -20,14 +24,10 @@ shinyServer(function(input, output) {
         image_read(density=500, depth=16, strip=TRUE) %>%
         image_resize("x235") %>%
         image_write(tempfile(fileext="png"), format="png")
-
+      
       return(list(src=img,
                   contentType="image/png",
                   alt="Album Cover Art"))
-    } else {
-      return(list(src="./images/fail.png",
-                  contentType="image/png",
-                  alt="Song not found"))
     }
   }, deleteFile=FALSE)
   ###
@@ -35,8 +35,8 @@ shinyServer(function(input, output) {
   
   ### Tab 1 content
   output$lyric_table <- DT::renderDataTable({
-    lyrics <- get_lyric_data()
-    DT::datatable(lyrics, style="bootstrap", options=list(dom="t"))
+    get_lyric_data() %>%
+      DT::datatable(style="bootstrap", options=list(dom="t"))
   })
   ###
   
