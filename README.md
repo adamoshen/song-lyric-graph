@@ -25,7 +25,7 @@ Other required packages that are used but not loaded: `purrr`, `DT`.
 ## Running the app
 
 ```
-shiny::runGitHub(repo="Song-Lyric-Co-occurrence", username="adamshen1")
+shiny::runGitHub(repo="Song_Lyric_Co-occurrence", username="adamshen1")
 ```
 
 ## Demo
