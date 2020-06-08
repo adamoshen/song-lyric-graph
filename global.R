@@ -50,9 +50,9 @@ create_graph <- reactive({
   } else {
     a <- grid::arrow(type="closed", length=unit(3, "mm"))
     
-    set.seed(20)
+    set.seed(101)
     
-    ggraph(lyric_data, layout="fr")+
+    ggraph(lyric_data, layout="nicely")+
       geom_edge_fan(aes(colour=factor(n)), arrow=a,
                     start_cap=circle(5, "mm"), end_cap=circle(3, "mm"))+
       geom_edge_loop(aes(colour=factor(n), span=-30), arrow=a, position=position_nudge(x=0.1),
