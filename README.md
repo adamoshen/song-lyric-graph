@@ -1,4 +1,4 @@
-# Song Lyric Co-occurrence
+# Song Lyric Co-occurrence [![HitCount](http://hits.dwyl.com/adamshen1/Song_Lyric_Co-occurrence.svg)](http://hits.dwyl.com/adamshen1/Song_Lyric_Co-occurrence)
 
 A Shiny app for visualizing song lyric co-occurrences. Song cover art and lyrics are obtained from [Genius](https://genius.com).
 
