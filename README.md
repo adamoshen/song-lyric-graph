@@ -20,7 +20,7 @@ library(ggraph)
 library(stringr)
 ```
 
-Other required packages that are used but not loaded: `purrr`, `DT`.
+Other required packages that are loaded but not attached: `purrr`, `DT`. Requires `tibble` 3.0.0 or higher.
 
 ## Running the app
 
