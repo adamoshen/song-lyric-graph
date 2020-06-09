@@ -6,7 +6,7 @@ A Shiny app for visualizing song lyric co-occurrences. Song cover art and lyrics
 
 From the `global.R` file:
 
-```
+```r
 library(shiny)
 library(shinythemes)
 library(rvest)
@@ -24,7 +24,7 @@ Other required packages that are used but not loaded: `purrr`, `DT`.
 
 ## Running the app
 
-```
+```r
 shiny::runGitHub(repo="Song_Lyric_Co-occurrence", username="adamshen1")
 ```
 
