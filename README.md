@@ -1,6 +1,6 @@
-# Song Lyric Co-occurrence [![HitCount](http://hits.dwyl.com/adamshen1/Song_Lyric_Co-occurrence.svg)](http://hits.dwyl.com/adamshen1/Song_Lyric_Co-occurrence)
+# Song Lyric Graph
 
-A Shiny app for visualizing song lyric co-occurrences. Song cover art and lyrics are obtained from [Genius](https://genius.com).
+A Shiny app that creates a directed graph to visualize song lyric co-occurrences. Song cover art and lyrics are obtained from [Genius](https://genius.com).
 
 ## Required packages
 
@@ -25,7 +25,7 @@ Other required packages that are loaded but not attached: `purrr`, `DT`. Require
 ## Running the app
 
 ```r
-shiny::runGitHub(repo="Song_Lyric_Co-occurrence", username="adamshen1")
+shiny::runGitHub(repo="song-lyric-graph", username="adamshen1")
 ```
 
 ## Demo
