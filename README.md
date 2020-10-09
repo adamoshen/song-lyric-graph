@@ -2,6 +2,14 @@
 
 A Shiny app that creates a directed graph to visualize song lyric co-occurrences. Song cover art and lyrics are obtained from [Genius](https://genius.com).
 
+# Running the app
+
+```
+https://adamshen1.shinyapps.io/song-lyric-graph/
+```
+
+# Running the app locally
+
 ## Required packages
 
 From the `global.R` file:
@@ -21,8 +29,6 @@ library(stringr)
 ```
 
 Other required packages that are loaded but not attached: `purrr`, `DT`. Requires `tibble` 3.0.0 or higher.
-
-## Running the app
 
 ```r
 shiny::runGitHub(repo="song-lyric-graph", username="adamshen1")
