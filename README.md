@@ -2,15 +2,15 @@
 
 A Shiny app that creates a directed graph to visualize song lyric co-occurrences. Song cover art and lyrics are obtained from [Genius](https://genius.com).
 
-# Running the app
+## Running the app
 
 ```
 https://adamshen1.shinyapps.io/song-lyric-graph/
 ```
 
-# Running the app locally
+## Running the app locally
 
-## Required packages
+### Required packages
 
 From the `global.R` file:
 
