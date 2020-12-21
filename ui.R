@@ -1,5 +1,5 @@
 shinyUI(fluidPage(
-    theme=shinytheme("sandstone"),
+    theme=shinythemes::shinytheme("sandstone"),
 
     titlePanel("Song Lyric Graph"),
     

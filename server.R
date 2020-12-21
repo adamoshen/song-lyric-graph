@@ -12,9 +12,7 @@ shinyServer(function(input, output) {
   
   output$cover_art <- renderImage({
     if (is.character(checkpoint1$out)){
-      return(list(src="./images/fail.png",
-                  contentType="image/png",
-                  alt="Song not found"))
+      return(list(src="./images/fail.png", contentType="image/png", alt="Song not found"))
     } else {
       img <- gen_song_url(artist=user$artistname, song=user$songname) %>%
         read_html() %>%
@@ -25,9 +23,7 @@ shinyServer(function(input, output) {
         image_resize("x235") %>%
         image_write(tempfile(fileext="png"), format="png")
       
-      return(list(src=img,
-                  contentType="image/png",
-                  alt="Album Cover Art"))
+      return(list(src=img, contentType="image/png", alt="Album Cover Art"))
     }
   }, deleteFile=FALSE)
   ###
