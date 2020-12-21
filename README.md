@@ -31,7 +31,7 @@ library(stringr)
 Other required packages that are loaded but not attached: `purrr`, `DT`. Requires `tibble` 3.0.0 or higher.
 
 ```r
-shiny::runGitHub(repo="song-lyric-graph", username="adamshen1")
+shiny::runGitHub(repo="song-lyric-graph", username="adamoshen")
 ```
 
 ## Demo
