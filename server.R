@@ -32,7 +32,7 @@ shinyServer(function(input, output) {
   ### Tab 1 content
   output$lyric_table <- DT::renderDataTable({
     get_lyric_data() %>%
-      DT::datatable(style="bootstrap", options=list(dom="t"))
+      DT::datatable(style="bootstrap", options=list(dom="tp"))
   })
   ###
   
