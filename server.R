@@ -40,6 +40,6 @@ shinyServer(function(input, output) {
   ### Tab 2 content
   output$graph <- renderPlot({
     create_graph()
-  }, width=700, height=750, type="cairo")
+  }, width=700, height=750)
   ###
 })
