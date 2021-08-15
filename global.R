@@ -1,6 +1,7 @@
 library(shiny)
 library(rvest)
 library(genius)
+library(geniusr)
 library(dplyr)
 library(magick)
 library(ggplot2)
@@ -17,17 +18,18 @@ checkpoint1 <- reactiveValues(out=NA)
 ### Tab 1 content
 get_lyric_data <- reactive({
   lyric_data <- tibble(NULL)
-  
+
   while (nrow(lyric_data) == 0){
-    # `genius_lyrics()` can sometimes return empty data so we will loop until non-empty
-    lyric_data <- genius_lyrics(artist=user$artistname, song=user$songname, info="simple")
+    # Manual scraping can sometimes return empty data so we will loop until non-empty
+    lyric_data <- get_lyrics_search(artist_name=user$artistname, song_title=user$songname)
   }
-  
+
   lyric_data %>%
-    tidyr::drop_na(everything()) %>%
-    select(LyricA=lyric, everything()) %>%
-    mutate(LyricB=lead(LyricA)) %>%
-    tidyr::drop_na(everything()) %>%
+    select(line) %>%
+    tidyr::drop_na() %>%
+    rename(LyricA = line) %>%
+    mutate(LyricB = lead(LyricA)) %>%
+    tidyr::drop_na() %>%
     count(LyricA, LyricB, sort=TRUE) %>%
     filter(n > 1)
 })
@@ -38,7 +40,7 @@ get_lyric_data <- reactive({
 create_graph <- reactive({
   lyric_data <- get_lyric_data() %>%
     graph_from_data_frame()
-  
+
   if (ecount(lyric_data) == 0){
     ggplot(NULL)+
       geom_text(aes(x=0, y=1, label="Graph is empty - no repeated lyric pairs!",
@@ -47,9 +49,9 @@ create_graph <- reactive({
       theme_void()
   } else {
     a <- grid::arrow(type="closed", length=unit(3, "mm"))
-    
+
     set.seed(101)
-    
+
     ggraph(lyric_data, layout="nicely")+
       geom_edge_fan(aes(colour=factor(n)), arrow=a,
                     start_cap=circle(5, "mm"), end_cap=circle(3, "mm"))+
