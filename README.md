@@ -4,6 +4,9 @@ A Shiny app that creates a directed graph to visualize song lyric co-occurrences
 
 ## Running the app
 
+Genius-related apps don't appear to work anymore when hosted on shinyapps.io...
+It is probably best to just run it locally.
+
 ```
 https://adamoshen.shinyapps.io/song-lyric-graph/
 ```
@@ -14,19 +17,18 @@ https://adamoshen.shinyapps.io/song-lyric-graph/
 
 ```
 package     * version date       lib source        
-dplyr       * 1.0.2   2020-08-18 [1] CRAN (R 3.6.3)
-DT            0.16    2020-10-13 [1] CRAN (R 3.6.3)
-genius      * 2.2.0   2019-05-05 [1] CRAN (R 3.6.2)
-ggplot2     * 3.3.2   2020-06-19 [1] CRAN (R 3.6.3)
-ggraph      * 2.0.2   2020-03-17 [1] CRAN (R 3.6.3)
-igraph      * 1.2.5   2020-03-19 [1] CRAN (R 3.6.3)
-magick      * 2.3     2020-01-24 [1] CRAN (R 3.6.2)
-rvest       * 0.3.5   2019-11-08 [1] CRAN (R 3.6.3)
-shiny       * 1.4.0.2 2020-03-13 [1] CRAN (R 3.6.3)
-shinythemes   1.1.2   2018-11-06 [1] CRAN (R 3.6.2)
-stringr       1.4.0   2019-02-10 [1] CRAN (R 3.6.1)
-tibble        3.0.0   2020-03-30 [1] CRAN (R 3.6.3)
-tidyr         1.0.2   2020-01-24 [1] CRAN (R 3.6.3)
+dplyr       * 1.0.5   2021-03-05 [1] CRAN (R 4.0.4)
+DT            0.17    2021-01-06 [1] CRAN (R 4.0.4)
+genius      * 2.2.2   2020-05-28 [1] CRAN (R 4.0.3)
+geniusr     * 1.2.0   2020-04-13 [1] CRAN (R 4.0.5)
+ggplot2     * 3.3.3   2020-12-30 [1] CRAN (R 4.0.4)
+ggraph      * 2.0.5   2021-02-23 [1] CRAN (R 4.0.4)
+igraph      * 1.2.6   2020-10-06 [1] CRAN (R 4.0.4)
+magick      * 2.7.2   2021-05-02 [1] CRAN (R 4.0.5)
+rvest       * 1.0.0   2021-03-09 [1] CRAN (R 4.0.4)
+shiny       * 1.6.0   2021-01-25 [1] CRAN (R 4.0.5)
+shinythemes   1.2.0   2021-01-25 [1] CRAN (R 4.0.5)
+tidyr         1.1.3   2021-03-03 [1] CRAN (R 4.0.4)
 ```
 
 ```r
